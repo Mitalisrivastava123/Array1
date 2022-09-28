@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,91 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<form method="post" class="form1">
-    <label class="company">Company:</label>
-    <br>
-    <input type="text" name="company" class="one" id="company">
-    <br>
-    <label>Model:</label>
-    <br>
-    <input type="text" name="company" class="two" id="model">
-    <br>
-    <label>Memory:</label>
-    <br>
-    <input type="text" name="company" class="three" id="memory">
-    <br>
-    <label>Price:</label>
-    <br>
-    <input type="text" name="company" class="four" id="price">
-    <br>
-    <button class="btn1" type="button" onclick="funct()">Add</button>
 
-</form>
+<body>
+    <h4>TASK 1 Take the details of a new product from the user as shown in the attachment and add it to the array after
+        the second product. Use proper validations if r</h4>
+    <form method="post" class="form1">
+        <label class="company">Company:</label>
+        <br>
+        <input type="text" class="one" id="company">
+        <br>
+        <label>Model:</label>
+        <br>
+        <input type="text" class="two" id="model">
+        <br>
+        <label>Memory:</label>
+        <br>
+        <input type="text" class="three" id="memory">
+        <br>
+        <label>Price:</label>
+        <br>
+        <input type="text" class="four" id="price">
+        <br>
+        <label>Quantity</label>
+        <br>
+        <input type="text" id="quantity">
+        <button class="btn1" type="button" onclick="funct()">Add</button>
+        <p id="table5"></p>
+
+
+    </form>
+
+
+    <h4>TASK 2 Create a javscript array to store the information of products given in the attachment and display them on
+        a HTML page.</h4>
+    <button type="button" onclick="funct2()">display</button>
+    <p id="demo"></p>
+    <p id="table"></p>
 
     <script src="./script.js"></script>
+
+
+    <h4>TASK 3 Add a dropdown and a textbox with search button to search and display the product according to the
+        attachmen</h4>
+    <span id="selected-item"></span>
+
+    <select id="dropdown">
+        <option value="company">Company</option>
+        <option value="model">Model</option>
+        <option value="memory">Memory</option>
+        <option value="price">Price</option>
+    </select>
+
+    <input type="text" name="name" class="text1" id="field">
+
+    <button type="button" id="myInput" class="btn2" onclick="search()">Search</button>
+    <p id="table1"></p>
+
+    <h4>TASK4 Filter and display the products with in a given price range.</h4>
+    <input type="text" placeholder="Minimum Price" name="price" id="minprice">
+    <input type="text" placeholder="Maximum Price" name="price" id="maxprice">
+    <button type="button" onclick="searchprice()">Search</button>
+    <p id="table3"></p>
+
+    <h4>TASK 5 Add a checkbox with every product. User can select one or more products to delete from the list and
+        display the remaining products after deletion.</h4>
+    <button onclick="checkproduct()" type="button">Check Product </button>
+    <button type="button" onclick="deleteitem()">Delete</button>
+    <p id="table4"></p>
+
+
+    <h4>TASK 6 Inventory manager should be able to update the quantity of a products. Display the updated quantity.</h4>
+   
+
+    <button type="button" onclick="quantitytableupdate()">Quantity Update Table</button>
+    <p id="quantitytable"></p>
+
+    
+    <select id="dropdown1">
+        <option value="company">Samsung Galaxy</option>
+        <option value="model">Nokia S730</option>
+        <option value="memory">Xiaomi Note</option>
+        <option value="price">Motorola G10</option>
+        <option value="price">Apple S12</option>
+    </select>
+    <input type="text" name="name" class="text1" id="field1">
+    <button type="button" name="update" onclick="updatedata()">Update</button>
 </body>
+
 </html>
