@@ -179,7 +179,24 @@ function updatedata()
 {
     
     var quantity=document.getElementById("quantity").value;
-    console.log(quantity);
+    // console.log(quantity);
+    var dropdown1=document.getElementById("dropdown1").value;
+    console.log(dropdown1);
+ 
+    if(dropdown1=="samsung")
+    {
+        newarray.forEach((element) => {
+           if(element.company=="samsung"){
+          element.quantity=document.getElementById("field1").value;
+
+           }
+         console.log((element.quantity));
+     
+    });
+}
+
+    
+ 
  
 
 
