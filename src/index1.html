@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form method="post" class="form1">
+        <label class="company">Company:</label>
+        <br>
+        <input type="text" class="one" id="company">
+        <br>
+        <label>Model:</label>
+        <br>
+        <input type="text" class="two" id="model">
+        <br>
+        <label>Memory:</label>
+        <br>
+        <input type="text" class="three" id="memory">
+        <br>
+        <label>Price:</label>
+        <br>
+        <input type="text" class="four" id="price">
+
+        <button class="btn1" type="button" onclick="function1()">Add</button>
+        <p id="table5"></p>
+
+
+    </form>
+
+
+    <select id="dropdown5">
+        <option value="ascending">ascending</option>
+        <option value="descending">descending</option>
+    </select>
+    <select id="dropdown4">
+        <option value="sort">-Sort by-</option>
+        <option value="company">company</option>
+        <option value="model">model</option>
+        <option value="memory">memory</option>
+        <option value="price">price</option>
+    </select>
+
+    <!-- <button type="button" id="btn1" onclick="function2()">display</button> -->
+    <button type="button" onclick="funct2()">display</button>
+
+    <p id="table"></p>
+    <script src="./script1.js"></script>
+</body>
+
+</html>
