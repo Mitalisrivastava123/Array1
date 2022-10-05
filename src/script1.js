@@ -1,6 +1,6 @@
 let newarray = [
     {
-        company: "samsung",
+        company: "Samsung",
         model: "Galaxy",
         memory: "64",
         price: "15000"
@@ -37,7 +37,7 @@ let newarray = [
     }
 
 ];
-
+disp(newarray)
 function function1() {
     var company = document.getElementById("company").value;
     console.log(company);
@@ -51,7 +51,14 @@ function function1() {
     newarray.push(obj);
     console.log(obj);
 }
-
+function disp(a) {
+    var string1 = "<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>Price</th></tr>";
+    for (let x of a) {
+        string1 += "<tr><td>" + x['company'] + "</td><td>" + x['model'] + "</td><td> " + x['memory'] + "</td><td>" + x['price'] + "</td></tr>";
+    }
+    string1 += "</table>";
+    document.getElementById("table").innerHTML = string1;
+}
 function funct2() {
 
     var company = document.getElementById("company").value;
@@ -67,105 +74,95 @@ function funct2() {
     var dropdown5 = document.getElementById("dropdown5").value;
     console.log(dropdown5);
 
-    var string1 = "<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>Price</th></tr>";
-    for (let x of newarray) {
-        if (dropdown5 == "ascending") {
-            if (dropdown4 == "company") {
-                newarray.sort((a, b) => {
-                    let fa = a.company.toLowerCase(),
-                        fb = b.company.toLowerCase();
+    if (dropdown5 == "ascending") {
+        if (dropdown4 == "company") {
+            newarray.sort((a, b) => {
+                let fa = a.company.toLowerCase(),
+                    fb = b.company.toLowerCase();
 
-                    if (fa < fb) {
-                        return -1;
-                    }
-                    if (fa > fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
+                if (fa < fb) {
+                    return -1;
+                }
+                if (fa > fb) {
+                    return 1;
+                }
+                return 0;
+            });
 
-            }
-            if (dropdown4 == "model") {
-                newarray.sort((a, b) => {
-                    let fa = a.model.toLowerCase(),
-                        fb = b.model.toLowerCase();
-
-                    if (fa < fb) {
-                        return -1;
-                    }
-                    if (fa > fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
-
-            }
-            if (dropdown4 == "memory") {
-                newarray.sort(function (a, b) {
-                    return parseFloat(a.memory) - parseFloat(b.memory);
-                });
-
-            }
-            if (dropdown4 == "price") {
-                newarray.sort(function (a, b) {
-                    return parseFloat(a.price) - parseFloat(b.price);
-                });
-
-            }
         }
-        if(dropdown5=="descending")
-        {
-            if (dropdown4 == "company") {
-                newarray.sort((a, b) => {
-                    let fa = a.company.toLowerCase(),
-                        fb = b.company.toLowerCase();
+        if (dropdown4 == "model") {
+            newarray.sort((a, b) => {
+                let fa = a.model.toLowerCase(),
+                    fb = b.model.toLowerCase();
 
-                    if (fa > fb) {
-                        return -1;
-                    }
-                    if (fa < fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
+                if (fa < fb) {
+                    return -1;
+                }
+                if (fa > fb) {
+                    return 1;
+                }
+                return 0;
+            });
 
-            }
-            if (dropdown4 == "model") {
-                newarray.sort((a, b) => {
-                    let fa = a.model.toLowerCase(),
-                        fb = b.model.toLowerCase();
-
-                    if (fa > fb) {
-                        return -1;
-                    }
-                    if (fa < fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
-
-            }
-            if (dropdown4 == "memory") {
-                newarray.sort(function (a, b) {
-                    return parseFloat(b.memory) - parseFloat(a.memory);
-                });
-
-            }
-            if (dropdown4 == "price") {
-                newarray.sort(function (a, b) {
-                    return parseFloat(b.price) - parseFloat(a.price);
-                });
-
-            }
-          
         }
+        if (dropdown4 == "memory") {
+            newarray.sort(function (a, b) {
+                return parseFloat(a.memory) - parseFloat(b.memory);
+            });
 
-            string1 += "<tr><td>" + x['company'] + "</td><td>" + x['model'] + "</td><td> " + x['memory'] + "</td><td>" + x['price'] + "</td></tr>";
-    
+        }
+        if (dropdown4 == "price") {
+            newarray.sort(function (a, b) {
+                return parseFloat(a.price) - parseFloat(b.price);
+            });
+
+        }
     }
-    string1 += "</table>";
-    document.getElementById("table").innerHTML = string1;
+    if (dropdown5 == "descending") {
+        if (dropdown4 == "company") {
+            newarray.sort((a, b) => {
+                let fa = a.company.toLowerCase(),
+                    fb = b.company.toLowerCase();
 
+                if (fa > fb) {
+                    return -1;
+                }
+                if (fa < fb) {
+                    return 1;
+                }
+                return 0;
+            });
 
+        }
+        if (dropdown4 == "model") {
+            newarray.sort((a, b) => {
+                let fa = a.model.toLowerCase(),
+                    fb = b.model.toLowerCase();
+
+                if (fa > fb) {
+                    return -1;
+                }
+                if (fa < fb) {
+                    return 1;
+                }
+                return 0;
+            });
+
+        }
+        if (dropdown4 == "memory") {
+            newarray.sort(function (a, b) {
+                return parseFloat(b.memory) - parseFloat(a.memory);
+            });
+
+        }
+        if (dropdown4 == "price") {
+            newarray.sort(function (a, b) {
+                return parseFloat(b.price) - parseFloat(a.price);
+            });
+
+        }
+
+    }
+    disp(newarray);
 }
 
